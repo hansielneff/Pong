@@ -10,7 +10,7 @@
 class MainMenuState : public GameState {
 public:
 	MainMenuState(Game &game);
-	~MainMenuState();
+	~MainMenuState() {}
 
 	virtual void handleEvents(const sf::Event &event);
 	virtual void update(sf::Time deltaTime);

@@ -18,11 +18,10 @@ public:
 	void render();
 	void handleEvents();
 
-	sf::RenderWindow& getWindow() { return window; }
+	sf::RenderWindow &window;
 
 private:
 	std::vector<GameState*> gameStates;
-	sf::RenderWindow &window;
 };
 
 #endif

@@ -1,6 +1,8 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <vector>
+#include <cstdlib>
+#include <ctime>
 
 #include "game.h"
 #include "main_menu_state.h"
@@ -18,6 +20,8 @@ int main() {
 	Game game(window);
 	game.addState(new MainMenuState(game));
 	sf::Clock clock;
+
+	std::srand(std::time(nullptr));
 
 	while (window.isOpen()) {
 		game.handleEvents();
