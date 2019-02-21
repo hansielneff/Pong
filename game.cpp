@@ -1,12 +1,5 @@
 #include "game.h"
 
-#include <iostream>
-
-Game::Game(sf::RenderWindow &gameWindow, GameState *initialState)
-: window { gameWindow } {
-	if (initialState != nullptr) addState(initialState);
-}
-
 void Game::addState(GameState *state) {
 	gameStates.push_back(state);
 }
@@ -25,7 +18,6 @@ void Game::removeState(GameState *state) {
 
 void Game::update(sf::Time deltaTime) {
 	if (!gameStates.empty()) gameStates.back()->update(deltaTime);
-	std::cout << "Stack size: " << gameStates.size() << std::endl;
 }
 
 void Game::render() {

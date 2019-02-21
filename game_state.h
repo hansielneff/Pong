@@ -3,9 +3,11 @@
 
 #include "SFML/Graphics.hpp"
 
+class Game;
+
 class GameState {
 public:
-	GameState(sf::RenderWindow &gameWindow) : window { gameWindow } {}
+	GameState(Game &game) : game { game } {}
 	virtual ~GameState() {};
 
 	virtual void handleEvents(const sf::Event &event) = 0;
@@ -13,7 +15,7 @@ public:
 	virtual void render() = 0;
 
 protected:
-	sf::RenderWindow &window;
+	Game &game;
 };
 
 #endif

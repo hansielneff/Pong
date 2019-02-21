@@ -8,7 +8,7 @@
 
 class Game {
 public:
-	Game(sf::RenderWindow &gameWindow, GameState *initialState = nullptr);
+	Game(sf::RenderWindow &gameWindow) : window{ gameWindow } {}
 
 	void addState(GameState *state);
 	void removeState(int index);
@@ -17,6 +17,8 @@ public:
 	void update(sf::Time deltaTime);
 	void render();
 	void handleEvents();
+
+	sf::RenderWindow& getWindow() { return window; }
 
 private:
 	std::vector<GameState*> gameStates;

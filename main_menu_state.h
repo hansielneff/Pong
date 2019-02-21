@@ -5,9 +5,11 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "game.h"
+
 class MainMenuState : public GameState {
 public:
-	MainMenuState(sf::RenderWindow &gameWindow);
+	MainMenuState(Game &game);
 	~MainMenuState();
 
 	virtual void handleEvents(const sf::Event &event);
@@ -15,7 +17,8 @@ public:
 	virtual void render();
 
 private:
-	sf::Text title;
+	sf::Font blockyFont, robotoFont;
+	sf::Text title, pvpOption, pvcOption, quitOption;
 };
 
 #endif
